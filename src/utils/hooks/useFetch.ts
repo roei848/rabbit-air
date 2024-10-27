@@ -1,9 +1,8 @@
 import {useState, useEffect} from 'react';
 import axios from "axios";
-import {AirlineOption} from "../interfaces";
 
-function useFetch(url: string | null) {
-    const [data, setData] = useState<AirlineOption[] | null>(null);
+function useFetch<T>(url: string | null) {
+    const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 

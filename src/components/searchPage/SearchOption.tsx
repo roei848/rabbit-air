@@ -8,7 +8,6 @@ interface SearchOptionProps {
 }
 
 const SearchOption = ({searchOption, handleOptionClick}: SearchOptionProps) => {
-
     return (
         <div key={searchOption.code} className="option-wrapper" onClick={() => handleOptionClick(searchOption)}>
             <div className="option-logo"><img src={searchOption.logo} alt="search"/></div>

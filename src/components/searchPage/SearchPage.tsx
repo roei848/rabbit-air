@@ -5,9 +5,8 @@ import useDebounce from '../../utils/hooks/useDebounce';
 import {api_base_url} from "../../utils/globals";
 import "./searchPage.scss";
 import SearchOption from "./SearchOption";
-import Spinner from "../loaders/Spinner";
 import {AirlineOption} from "../../utils/interfaces";
-import searchOption from "./SearchOption";
+import AirplaneSpinner from "../loaders/AirplaneSpinner";
 
 
 const SearchPage = () => {
@@ -15,19 +14,19 @@ const SearchPage = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const debouncedSearchTerm = useDebounce(searchTerm, 1000);
 
-    const {data, loading, error} = useFetch(
+    const {data, loading, error} = useFetch<AirlineOption[]>(
         debouncedSearchTerm ? `${api_base_url}/search?query=${debouncedSearchTerm}` : null
     );
 
     const handleOptionClick = (searchOption: AirlineOption) => {
         console.log(searchOption);
-        navigate(`/airline?airline-code=${searchOption.code}`);
+        navigate(`/airline/${searchOption.code}`);
     }
 
 
     const renderAutocomplete = () => {
         if (loading) {
-            return <Spinner />
+            return <AirplaneSpinner />
         }
 
         if (error) {

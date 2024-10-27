@@ -1,0 +1,115 @@
+.airline-page-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.airline-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: whitesmoke;
+  width: 30%;
+}
+
+.airline-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.airline-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.airline-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.airline-detail {
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  flex-direction: column;
+}
+
+.detail-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.detail-value {
+  font-size: 16px;
+
+  a {
+    color: dodgerblue;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.reviews-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 16px;
+  width: 70%;
+}
+
+.review-comment {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.review-comment-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 50%;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+.review-text {
+  font-size: 14px;
+}
+
+.review-grades {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 50%;
+}
+
+.review-grade {
+  display: flex;
+  align-items: center;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 14px;
+  justify-content: space-between;
+}
+
+.review-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
