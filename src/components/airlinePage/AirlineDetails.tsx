@@ -3,6 +3,7 @@ import AirlineInfo from "./AirlineInfo";
 import ReviewGrade from "./ReviewGrade";
 import {AirlineData, categoryTitles, Review, reviewCategories} from "../../utils/interfaces";
 import "./airlinePage.scss";
+import {ICON_TYPE} from "../../utils/enums";
 
 interface AirlineDetailsProps {
     airlineData: AirlineData;
@@ -37,9 +38,12 @@ const AirlineDetails = ({airlineData}: AirlineDetailsProps) => {
                 <img src={airlineData.logo} alt={airlineData.code} className="airline-logo"/>
                 <h1 className="airline-title">{`${airlineData.name} - ${airlineData.code}`}</h1>
             </div>
-            <AirlineInfo title="Customer Support Email" value={airlineData.customerServiceEmail}/>
-            <AirlineInfo title="Customer Support Phone" value={airlineData.customerServicePhone}/>
-            <AirlineInfo title="Website" value={airlineData.customerServiceWebsite} isLink={true}/>
+            <AirlineInfo title="Customer Support Email" value={airlineData.customerServiceEmail}
+                         icon={ICON_TYPE.EMAIL}/>
+            <AirlineInfo title="Customer Support Phone" value={airlineData.customerServicePhone}
+                         icon={ICON_TYPE.PHONE}/>
+            <AirlineInfo title="Website" value={airlineData.customerServiceWebsite}
+                         icon={ICON_TYPE.WEBSITE} isLink={true}/>
             <div className="average-grades">
                 {grades && reviewCategories.map((category) => (
                     <ReviewGrade

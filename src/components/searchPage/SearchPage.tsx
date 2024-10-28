@@ -24,7 +24,6 @@ const SearchPage = () => {
     );
 
     const handleOptionClick = (searchOption: AirlineOption) => {
-        console.log(searchOption);
         navigate(`/airline/${searchOption.code}`);
     }
 
