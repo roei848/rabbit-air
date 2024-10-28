@@ -15,20 +15,20 @@ const AirlinePage = () => {
     const {data, loading, error} = useFetch<AirlineData>(`${api_base_url}/airline?airline-code=${airline}`)
 
     const renderPageContent = () => {
-        if (true) {
+        if (loading) {
             return <AirplaneSpinner />;
         }
 
-        // if (error) {
-        //     return <ErrorComponent title="Failed to fetch reviews" message={error} imgSrc="/sadRabbit.png"/>;
-        // }
-        //
-        // if (data) {
-        //     return <>
-        //         <AirlineDetails airlineData={data} />
-        //         <ReviewSection reviews={data.reviews} />
-        //     </>
-        // }
+        if (error) {
+            return <ErrorComponent title="Failed to fetch reviews" message={error} imgSrc="/sadRabbit.png"/>;
+        }
+
+        if (data) {
+            return <>
+                <AirlineDetails airlineData={data} />
+                <ReviewSection reviews={data.reviews} />
+            </>
+        }
 
         return <></>
     }
