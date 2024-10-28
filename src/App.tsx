@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import {Route, Routes, BrowserRouter, HashRouter} from 'react-router-dom';
 import SearchPage from "./components/searchPage/SearchPage";
 import AirlinePage from "./components/airlinePage/AirlinePage";
 import './app.scss';
@@ -7,12 +7,12 @@ import './app.scss';
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<SearchPage/>}/>
                 <Route path="/airline/:airline" element={<AirlinePage/>}/>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
