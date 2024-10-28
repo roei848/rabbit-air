@@ -1,7 +1,7 @@
 import React from "react";
-import {ICON_TYPE} from "../../utils/enums";
-import {getSvgIcon} from "../../utils/svgIcons";
-import "./airlinePage.scss";
+import {ICON_TYPE} from "../../../utils/enums";
+import {getSvgIcon} from "../../../utils/svgIcons";
+import "./review.scss";
 
 interface ReviewGradeProps {
     title: string;

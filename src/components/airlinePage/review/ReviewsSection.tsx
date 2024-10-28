@@ -1,7 +1,7 @@
 import React from "react";
 import ReviewComment from "./ReviewComment";
-import {Review} from "../../utils/interfaces";
-import "./airlinePage.scss";
+import {Review} from "../../../utils/interfaces";
+import "./review.scss";
 
 interface ReviewSectionProps {
     reviews: Review[];

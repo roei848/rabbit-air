@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import AirlineInfo from "./AirlineInfo";
-import ReviewGrade from "./ReviewGrade";
 import {ICON_TYPE} from "../../utils/enums";
+import ReviewGrade from "./review/ReviewGrade";
 import {AirlineData, categoryTitles, Review, reviewCategories} from "../../utils/interfaces";
 import "./airlinePage.scss";
 
