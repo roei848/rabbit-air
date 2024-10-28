@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../utils/hooks/useFetch";
 import {api_base_url} from "../../utils/globals";
@@ -11,10 +11,7 @@ import ReviewSection from "./ReviewsSection";
 
 const AirlinePage = () => {
     const { airline } = useParams<{ airline: string }>();
-
     const {data, loading, error} = useFetch<AirlineData>(`${api_base_url}/airline?airline-code=${airline}`)
-
-    console.log(data, loading, error);
 
     const renderPageContent = () => {
         if (loading) {

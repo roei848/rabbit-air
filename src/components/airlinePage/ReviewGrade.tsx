@@ -1,7 +1,7 @@
 import React from "react";
-import "./airlinePage.scss";
 import {getSvgIcon} from "../../utils/svgIcons";
 import {ICON_TYPE} from "../../utils/enums";
+import "./airlinePage.scss";
 
 interface ReviewGradeProps {
     title: string;
@@ -9,17 +9,18 @@ interface ReviewGradeProps {
 }
 
 const ReviewGrade = ({title, grade}: ReviewGradeProps) => {
-    const emptyStars = 5 - grade;
+    const fullStars = Math.floor(grade);
+    const emptyStars = 5 - fullStars;
 
     return (
         <div className="review-grade">
             <div className="review-title">{title}</div>
             <div className="review-grade">
-                {Array(grade).fill(0).map(() => (
-                    getSvgIcon(ICON_TYPE.FULL_STAR)
+                {Array(fullStars).fill(0).map((_, index) => (
+                    <div key={index}>{getSvgIcon(ICON_TYPE.FULL_STAR)}</div>
                 ))}
-                {Array(emptyStars).fill(0).map(() => (
-                    getSvgIcon(ICON_TYPE.EMPTY_STAR)
+                {Array(emptyStars).fill(0).map((_, index) => (
+                    <div key={index}>{getSvgIcon(ICON_TYPE.EMPTY_STAR)}</div>
                 ))}
             </div>
         </div>

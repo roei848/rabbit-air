@@ -10,20 +10,24 @@
     font-size: 32px;
     margin-bottom: 20px;
   }
+}
 
-  .search-input {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px 16px;
-    border: 1px solid gray;
-    border-radius: 4px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s;
+.black-rabbit-img {
+  width: 400px;
+}
 
-    &::placeholder {
-      color: darkgray;
-    }
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+
+  &::placeholder {
+    color: darkgray;
   }
 }
 
@@ -33,7 +37,7 @@
   max-width: 400px;
   border: 1px solid gray;
   border-top: 0;
-  max-height: 50vh;
+  max-height: 40vh;
   overflow: scroll;
 }
 

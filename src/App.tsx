@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import SearchPage from "./components/searchPage/SearchPage";
-import AirlinePage from "./components/reviewPage/AirlinePage";
+import AirlinePage from "./components/airlinePage/AirlinePage";
 import './app.scss';
 
 

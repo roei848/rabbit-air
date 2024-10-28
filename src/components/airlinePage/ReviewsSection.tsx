@@ -10,7 +10,7 @@ interface ReviewSectionProps {
 const ReviewSection = ({reviews}: ReviewSectionProps) => {
     return (
         <div className="reviews-section-wrapper">
-            {reviews.map(review => <ReviewComment review={review} />)}
+            {reviews.map((review, index) => <ReviewComment key={index} review={review} />)}
         </div>
     )
 }

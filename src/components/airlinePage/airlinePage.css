@@ -55,6 +55,14 @@
   text-decoration: underline;
 }
 
+.average-grades {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .reviews-section-wrapper {
   display: flex;
   flex-direction: column;

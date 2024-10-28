@@ -46,7 +46,8 @@ const SearchPage = () => {
 
     return (
         <div className="search-page-wrapper">
-            <h1>Search Page</h1>
+            <img className="black-rabbit-img" src="/blackRabbit.jpeg" alt="black rabbit airline"/>
+            <h1>Welcome to Black Rabbit Airlines</h1>
             <input
                 type="text"
                 className="search-input"
