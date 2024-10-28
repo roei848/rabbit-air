@@ -1,9 +1,9 @@
 import React, {useEffect} from "react";
 import AirlineInfo from "./AirlineInfo";
 import ReviewGrade from "./ReviewGrade";
+import {ICON_TYPE} from "../../utils/enums";
 import {AirlineData, categoryTitles, Review, reviewCategories} from "../../utils/interfaces";
 import "./airlinePage.scss";
-import {ICON_TYPE} from "../../utils/enums";
 
 interface AirlineDetailsProps {
     airlineData: AirlineData;
