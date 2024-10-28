@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/rabbit-air/static/css/main.7ede1d88.css",
-    "main.js": "/rabbit-air/static/js/main.57d0184b.js",
+    "main.js": "/rabbit-air/static/js/main.b9ba744c.js",
     "index.html": "/rabbit-air/index.html",
     "main.7ede1d88.css.map": "/rabbit-air/static/css/main.7ede1d88.css.map",
-    "main.57d0184b.js.map": "/rabbit-air/static/js/main.57d0184b.js.map"
+    "main.b9ba744c.js.map": "/rabbit-air/static/js/main.b9ba744c.js.map"
   },
   "entrypoints": [
     "static/css/main.7ede1d88.css",
-    "static/js/main.57d0184b.js"
+    "static/js/main.b9ba744c.js"
   ]
 }
