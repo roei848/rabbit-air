@@ -7,21 +7,20 @@ function useFetch<T>(url: string | null) {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        console.log(`Use Fetch with ${url}`)
         if (url) {
             setLoading(true);
             axios.get(url).then(res => {
-                if(res.status !== 200) {
+                if (res.status !== 200) {
                     setError("Failed fetching data.");
-                }
-                else {
+                } else {
                     setData(res.data);
                 }
 
             }).catch(error => {
-                setError(error.message)
+                setError(error.message);
+                console.error(error.message);
             }).finally(() => {
-                setLoading(false)
+                setLoading(false);
             })
 
         }

@@ -8,7 +8,7 @@ function useDebounce<T>(value: T, delay: number): T {
             setDebouncedValue(value);
         }, delay);
 
-        // Clear timeout if value or delay changes
+        // In order to reset the timeout if value changed
         return () => {
             clearTimeout(handler);
         };

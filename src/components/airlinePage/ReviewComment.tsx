@@ -1,6 +1,6 @@
 import React from "react";
-import {categoryTitles, Review, reviewCategories} from "../../utils/interfaces";
 import ReviewGrade from "./ReviewGrade";
+import {categoryTitles, Review, reviewCategories} from "../../utils/interfaces";
 import "./airlinePage.scss";
 
 interface ReviewCommentProps {

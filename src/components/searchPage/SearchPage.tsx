@@ -1,17 +1,21 @@
 import React, {useState} from "react";
 import {useNavigate} from 'react-router-dom';
-import useFetch from "../../utils/hooks/useFetch";
-import useDebounce from '../../utils/hooks/useDebounce';
-import {api_base_url} from "../../utils/globals";
+import DatePicker from "./DatePicker";
 import SearchOption from "./SearchOption";
-import {AirlineOption} from "../../utils/interfaces";
-import AirplaneSpinner from "../loaders/AirplaneSpinner";
+import useFetch from "../../utils/hooks/useFetch";
 import ErrorComponent from "../errors/ErrorComponent";
+import useDebounce from '../../utils/hooks/useDebounce';
+import AirplaneSpinner from "../loaders/AirplaneSpinner";
+import {api_base_url} from "../../utils/globals";
+import {AirlineOption} from "../../utils/interfaces";
 import "./searchPage.scss";
 
 
 const SearchPage = () => {
     const navigate = useNavigate();
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [filterByDates, setFilterByDates] = useState<boolean>(false);
     const [searchTerm, setSearchTerm] = useState("");
     const debouncedSearchTerm = useDebounce(searchTerm, 1000);
 
@@ -52,6 +56,24 @@ const SearchPage = () => {
         <div className="search-page-wrapper">
             <img className="black-rabbit-img" src="/blackRabbit.jpeg" alt="black rabbit airline"/>
             <h1>Welcome to Black Rabbit Airlines</h1>
+            <div className="date-picker-wrapper">
+                <div className="filter-toggle">
+                    <input
+                        type="checkbox"
+                        className="toggle-input"
+                        checked={filterByDates}
+                        onChange={(e) => setFilterByDates(e.target.checked)}
+                    />
+                    <span>Filter By Dates</span>
+                </div>
+                <DatePicker
+                    startDate={startDate}
+                    setStartDate={setStartDate}
+                    endDate={endDate}
+                    setEndDate={setEndDate}
+                    disabled={!filterByDates}
+                />
+            </div>
             <input
                 type="text"
                 className="search-input"

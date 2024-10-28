@@ -1,22 +1,22 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import {useParams} from "react-router-dom";
+import ReviewSection from "./ReviewsSection";
+import AirlineDetails from "./AirlineDetails";
 import useFetch from "../../utils/hooks/useFetch";
+import ErrorComponent from "../errors/ErrorComponent";
+import AirplaneSpinner from "../loaders/AirplaneSpinner";
 import {api_base_url} from "../../utils/globals";
 import {AirlineData} from "../../utils/interfaces";
-import AirplaneSpinner from "../loaders/AirplaneSpinner";
-import AirlineDetails from "./AirlineDetails";
-import ReviewSection from "./ReviewsSection";
 import "./airlinePage.scss";
-import ErrorComponent from "../errors/ErrorComponent";
 
 
 const AirlinePage = () => {
-    const { airline } = useParams<{ airline: string }>();
+    const {airline} = useParams<{ airline: string }>();
     const {data, loading, error} = useFetch<AirlineData>(`${api_base_url}/airline?airline-code=${airline}`)
 
     const renderPageContent = () => {
         if (loading) {
-            return <AirplaneSpinner />;
+            return <AirplaneSpinner/>;
         }
 
         if (error) {
@@ -25,8 +25,8 @@ const AirlinePage = () => {
 
         if (data) {
             return <>
-                <AirlineDetails airlineData={data} />
-                <ReviewSection reviews={data.reviews} />
+                <AirlineDetails airlineData={data}/>
+                <ReviewSection reviews={data.reviews}/>
             </>
         }
 

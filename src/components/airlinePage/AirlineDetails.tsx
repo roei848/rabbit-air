@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
-import {AirlineData, categoryTitles, Review, reviewCategories} from "../../utils/interfaces";
 import AirlineInfo from "./AirlineInfo";
 import ReviewGrade from "./ReviewGrade";
+import {AirlineData, categoryTitles, Review, reviewCategories} from "../../utils/interfaces";
 import "./airlinePage.scss";
 
 interface AirlineDetailsProps {
