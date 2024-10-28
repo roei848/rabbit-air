@@ -71,11 +71,12 @@
   overflow-y: scroll;
   padding: 16px;
   width: 70%;
+  box-sizing: border-box;
 }
 
 .review-comment {
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
   padding: 16px;
   display: flex;
@@ -119,4 +120,41 @@
 .review-title {
   font-weight: bold;
   margin-bottom: 4px;
+}
+
+// Mobile Adjustment
+@media (max-width: 600px) {
+  .airline-page-wrapper {
+    flex-direction: column;
+  }
+
+  .airline-details {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .average-grades, .review-grades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .reviews-section-wrapper {
+    overflow-y: inherit;
+    width: 100%;
+  }
+
+  .review-comment {
+    flex-direction: column;
+  }
+
+  .review-comment-content {
+    width: 100%;
+  }
+
+  .review-grade {
+    padding: 4px;
+  }
 }

@@ -10,9 +10,19 @@ $s-footer-height : 3rem;
 %boxShadow--in { box-shadow: 0 0 10rem 0 #000000 inset; }
 
 .svg-calLoader {
-  width: 230px; height: 230px;
+  width: 230px;
+  height: 230px;
   transform-origin: 115px 115px;
   animation: 2.4s linear infinite loader-spin;
+  align-self: center;
+}
+
+.airline-page-wrapper {
+  .svg-calLoader {
+    position: absolute;
+    top: calc(50% - 115px);
+    left: calc(50% - 115px);
+  }
 }
 
 .cal-loader__plane { fill: $c-hilight; }
