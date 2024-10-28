@@ -1,1 +1,1 @@
-export const api_base_url = 'https://frontend-assignment-api.azurewebsites.net/api';
+export const api_base_url = 'https://frontend-assignment-api.azurewebsites.net/api55';

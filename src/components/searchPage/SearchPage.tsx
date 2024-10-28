@@ -3,10 +3,11 @@ import {useNavigate} from 'react-router-dom';
 import useFetch from "../../utils/hooks/useFetch";
 import useDebounce from '../../utils/hooks/useDebounce';
 import {api_base_url} from "../../utils/globals";
-import "./searchPage.scss";
 import SearchOption from "./SearchOption";
 import {AirlineOption} from "../../utils/interfaces";
 import AirplaneSpinner from "../loaders/AirplaneSpinner";
+import ErrorComponent from "../errors/ErrorComponent";
+import "./searchPage.scss";
 
 
 const SearchPage = () => {
@@ -26,17 +27,20 @@ const SearchPage = () => {
 
     const renderAutocomplete = () => {
         if (loading) {
-            return <AirplaneSpinner />
+            return <div className="search-options loading"><AirplaneSpinner/></div>
         }
 
         if (error) {
-            return <div>Error</div>;
+            return <div className="search-options">
+                <ErrorComponent title="Failed to fetch matching airlines" message="Try change your search input" />
+            </div>
         }
 
         if (data && debouncedSearchTerm) {
             return <div className="search-options">
                 {
-                    data.map(opt => <SearchOption key={opt.code} searchOption={opt} handleOptionClick={handleOptionClick}/>)
+                    data.map(opt => <SearchOption key={opt.code} searchOption={opt}
+                                                  handleOptionClick={handleOptionClick}/>)
                 }
             </div>
         }

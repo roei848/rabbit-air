@@ -36,6 +36,10 @@
   max-height: 40vh;
   overflow: scroll;
 }
+.search-options.loading {
+  display: flex;
+  justify-content: center;
+}
 
 .option-wrapper {
   display: flex;

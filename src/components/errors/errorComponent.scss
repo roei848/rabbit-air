@@ -1,0 +1,22 @@
+.error-wrapper {
+  //border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.error-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  font-size: 16px;
+}
+
+.error-img {
+  margin-top: 20px;
+  width: 100%;
+}

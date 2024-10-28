@@ -2,11 +2,12 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../../utils/hooks/useFetch";
 import {api_base_url} from "../../utils/globals";
-import "./airlinePage.scss";
 import {AirlineData} from "../../utils/interfaces";
 import AirplaneSpinner from "../loaders/AirplaneSpinner";
 import AirlineDetails from "./AirlineDetails";
 import ReviewSection from "./ReviewsSection";
+import "./airlinePage.scss";
+import ErrorComponent from "../errors/ErrorComponent";
 
 
 const AirlinePage = () => {
@@ -19,7 +20,7 @@ const AirlinePage = () => {
         }
 
         if (error) {
-            return <div>Error</div>;
+            return <ErrorComponent title="Failed to fetch reviews" message={error} imgSrc="/sadRabbit.png"/>;
         }
 
         if (data) {
